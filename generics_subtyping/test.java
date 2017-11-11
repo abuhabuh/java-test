@@ -11,15 +11,16 @@ public class test {
 
   public static void main(String args []) {
 
+    System.out.println("*** Show generics types with TypeToken");
     Tiger<Integer, Integer> t = new Tiger(3, 6);
 
     TypeToken token = TypeToken.of(t.getClass());
     for (Object obj: token.getTypes().classes()) {
       System.out.println(obj);
     }
-    System.out.println("*******************");
     
 
+    System.out.println("*** Some other test...");
     Mammal<String, String> m = new <String, String> Mammal() {
       @DoThing
       public void doThing(Integer in) {
@@ -30,8 +31,6 @@ public class test {
     for (Object obj: token.getTypes().classes()) {
       System.out.println(obj);
     }
-    System.out.println("*******************");
-
   }
 
 
